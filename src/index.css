@@ -12,38 +12,6 @@ body {
   font-style: normal;
 }
 
-.padding-1rem {
-  padding: 1rem;
-}
-
-.full-width {
-  min-width: 100%;
-  width: 100%;
-}
-
-.styleless-list {
-  list-style: none;
-  list-style-type: none;
-}
-
-.transparent-button {
-  border: none;
-  background-color: unset;
-  font-family: "Roboto Condensed", sans-serif;
-}
-
-.transparent-button:hover {
-  background-color: rgba(0, 255, 0, 0.1);
-}
-
-.transparent-button:focus {
-  background-color: rgba(0, 255, 0, 0.2);
-}
-
-.transparent-button:active {
-  background-color: rgba(0, 255, 0, 0.2);
-}
-
 .flex-row {
   display: flex;
   flex-direction: row;
