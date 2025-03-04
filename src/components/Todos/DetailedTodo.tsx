@@ -53,11 +53,14 @@ const DetailedTodo: React.FC<{
         ></TodoAttribute>
       </div>
       <div className="mt-auto flex w-full flex-row-reverse">
-        <button className="mx-2 rounded-lg bg-green-900 p-3 text-white hover:cursor-pointer hover:bg-green-800">
-          {todo.completion_status ? "Mark as done" : "Re-Open"}
-        </button>
         <button className="mx-2 rounded-lg bg-red-900 p-3 text-white hover:cursor-pointer hover:bg-red-800">
           Delete
+        </button>
+        <button className="mx-2 rounded-lg bg-blue-900 p-3 text-white hover:cursor-pointer hover:bg-blue-800">
+          Edit
+        </button>
+        <button className="mx-2 rounded-lg bg-green-900 p-3 text-white hover:cursor-pointer hover:bg-green-800">
+          {todo.completion_status ? "Mark as done" : "Re-Open"}
         </button>
       </div>
     </div>
