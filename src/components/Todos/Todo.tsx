@@ -16,19 +16,21 @@ const Todo: React.FC<{
   onClick: () => void;
   selectedTodoId: number;
 }> = (props) => {
-  let classList: string = "text-2xl font-medium";
-
-  if (props.selectedTodoId === props.todo.id) {
-    classList += "hover:bg-emerald-100";
-  }
+  let todoBackground: string =
+    props.selectedTodoId === props.todo.id
+      ? " bg-emerald-100"
+      : " bg-emerald-300 hover:bg-emerald-100";
 
   return (
     <div
-      className="m-4 mt-0 flex flex-col rounded-lg bg-emerald-50 p-4 hover:cursor-pointer hover:bg-emerald-200"
+      className={
+        "m-4 mt-0 flex flex-col rounded-lg p-4 hover:cursor-pointer " +
+        todoBackground
+      }
       onClick={props.onClick}
     >
       <div>
-        <p className={classList}>{props.todo.title}</p>
+        <p className="text-2xl font-medium">{props.todo.title}</p>
         {props.selectedTodoId === props.todo.id ? (
           <p>this todo is selected </p>
         ) : (
