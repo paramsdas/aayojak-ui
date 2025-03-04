@@ -35,7 +35,7 @@ const DetailedTodo: React.FC<{
       <div className="flex flex-row justify-evenly px-5">
         <TodoAttribute
           attribute_name="Status"
-          attribute_value={todo.completion_status ? "Open" : "Done"}
+          attribute_value={todo.completion_status ? "Done" : "Open"}
         ></TodoAttribute>
         <TodoAttribute
           attribute_name="Date completed"
@@ -60,7 +60,7 @@ const DetailedTodo: React.FC<{
           Edit
         </button>
         <button className="mx-2 rounded-lg bg-green-900 p-3 text-white hover:cursor-pointer hover:bg-green-800">
-          {todo.completion_status ? "Mark as done" : "Re-Open"}
+          {todo.completion_status ? "Re-Open" : "Mark as done"}
         </button>
       </div>
     </div>
