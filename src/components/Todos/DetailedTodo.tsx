@@ -1,5 +1,6 @@
 import React from "react";
 import { TodoType } from "./Types";
+import TodoAttribute from "./TodoAttribute";
 
 const DetailedTodo: React.FC<{
   todo: TodoType | undefined;
@@ -13,45 +14,51 @@ const DetailedTodo: React.FC<{
   }
 
   return (
-    <div className="flex h-full w-full flex-col space-y-4 p-4">
+    <div className="flex h-full w-full flex-col space-y-4 p-8">
       <div className="flex flex-row">
-        <p className="text-2xl font-semibold">{todo.title}</p>
+        <p className="text-3xl font-semibold">{todo.title}</p>
       </div>
       <div className="flex flex-row justify-around px-5">
-        <div className="flex flex-col">
-          <p className="text-sm font-bold">Id</p>
-          <p className="text-sm">{todo.id}</p>
-        </div>
-        <div className="flex flex-col">
-          <p className="text-sm font-bold">Date created</p>
-          <p className="text-sm">{todo.date_created}</p>
-        </div>
-        <div className="flex flex-col">
-          <p className="text-sm font-bold">Date modified</p>
-          <p className="text-sm">{todo.date_modified}</p>
-        </div>
+        <TodoAttribute
+          attribute_name="Id"
+          attribute_value={todo.id.toString()}
+        ></TodoAttribute>
+        <TodoAttribute
+          attribute_name="Date created"
+          attribute_value={todo.date_created}
+        ></TodoAttribute>
+        <TodoAttribute
+          attribute_name="Date modified"
+          attribute_value={todo.date_modified}
+        ></TodoAttribute>
       </div>
-      <div className="flex flex-row justify-around px-5">
-        <div className="flex flex-col">
-          <p className="text-sm font-bold">Status</p>
-          <p className="text-sm">{todo.completion_status ? "Open" : "Done"}</p>
-        </div>
-        <div className="flex flex-col">
-          <p className="text-sm font-bold">Date completed</p>
-          <p className="text-sm">
-            {todo.date_completed === undefined ? "-" : todo.date_completed}
-          </p>
-        </div>
+      <div className="flex flex-row justify-evenly px-5">
+        <TodoAttribute
+          attribute_name="Status"
+          attribute_value={todo.completion_status ? "Open" : "Done"}
+        ></TodoAttribute>
+        <TodoAttribute
+          attribute_name="Date completed"
+          attribute_value={
+            todo.date_completed === undefined ? "-" : todo.date_completed
+          }
+        ></TodoAttribute>
       </div>
       <div className="flex w-full flex-row">
-        <div className="flex flex-col">
-          <p className="text-sm font-bold">Description</p>
-          <p className="text-sm">{todo.description}</p>
-        </div>
+        <TodoAttribute
+          attribute_name="Description"
+          attribute_value={
+            todo.description === undefined ? "-" : todo.description
+          }
+        ></TodoAttribute>
       </div>
-      <div className="flex w-full flex-row-reverse">
-        <button className="mx-2 border-2">b1</button>
-        <button className="mx-2 border-2">b2</button>
+      <div className="mt-auto flex w-full flex-row-reverse">
+        <button className="mx-2 rounded-lg bg-green-900 p-3 text-white hover:cursor-pointer hover:bg-green-800">
+          {todo.completion_status ? "Mark as done" : "Re-Open"}
+        </button>
+        <button className="mx-2 rounded-lg bg-red-900 p-3 text-white hover:cursor-pointer hover:bg-red-800">
+          Delete
+        </button>
       </div>
     </div>
   );

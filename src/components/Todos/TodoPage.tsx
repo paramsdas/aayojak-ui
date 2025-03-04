@@ -12,7 +12,7 @@ const todos: TodoType[] = [
   {
     id: 2,
     title: "My test title 2",
-    description: "",
+    description: undefined,
     date_created: "DD/MM/YYYY (HH:MM:SS)",
     date_modified: "DD/MM/YYYY (HH:MM:SS)",
     date_completed: undefined,
@@ -56,10 +56,13 @@ function TodoPage() {
           <p className="p-4 text-4xl font-semibold text-emerald-200">Todos</p>
         </div>
         <div className="flex h-full flex-row">
-          <div className="flex w-2xl flex-col">
+          <div className="flex flex-col" style={{ width: "50%" }}>
             <div id="todo_list">{todos_dom}</div>
           </div>
-          <div className="flex h-full w-xl flex-col rounded-lg bg-emerald-200">
+          <div
+            className="flex h-full flex-col rounded-lg bg-emerald-200"
+            style={{ width: "50%" }}
+          >
             <div className="flex h-full w-full flex-row items-center justify-center">
               <DetailedTodo todo={selectedTodo}></DetailedTodo>
             </div>

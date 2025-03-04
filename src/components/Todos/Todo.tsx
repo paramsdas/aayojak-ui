@@ -7,7 +7,7 @@ const Todo: React.FC<{
   onClick: () => void;
   selectedTodoId: number;
 }> = (props) => {
-  let todoBackground: string =
+  const todoBackground: string =
     props.selectedTodoId === props.todo.id
       ? " bg-emerald-100"
       : " bg-emerald-300 hover:bg-emerald-200";
@@ -22,11 +22,6 @@ const Todo: React.FC<{
     >
       <div>
         <p className="text-2xl font-medium">{props.todo.title}</p>
-        {props.selectedTodoId === props.todo.id ? (
-          <p>this todo is selected </p>
-        ) : (
-          <></>
-        )}
       </div>
     </div>
   );
