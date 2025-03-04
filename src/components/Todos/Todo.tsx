@@ -1,14 +1,5 @@
 import React from "react";
-
-export type TodoType = {
-  id: number;
-  title: string;
-  description: string;
-  date_created: string;
-  date_modified: string;
-  date_completion: string | null;
-  completion_status: boolean;
-};
+import { TodoType } from "./Types";
 
 const Todo: React.FC<{
   todo: TodoType;
@@ -19,7 +10,7 @@ const Todo: React.FC<{
   let todoBackground: string =
     props.selectedTodoId === props.todo.id
       ? " bg-emerald-100"
-      : " bg-emerald-300 hover:bg-emerald-100";
+      : " bg-emerald-300 hover:bg-emerald-200";
 
   return (
     <div
