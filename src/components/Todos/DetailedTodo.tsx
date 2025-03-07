@@ -14,7 +14,7 @@ const DetailedTodo: React.FC<{
   }
 
   return (
-    <div className="flex max-h-full w-full flex-col space-y-4 p-4">
+    <div className="flex h-full w-full flex-col space-y-4 p-4">
       <div className="flex flex-row">
         <p className="text-3xl font-semibold">{todo.title}</p>
       </div>
