@@ -18,7 +18,7 @@ const DetailedTodo: React.FC<{
       <div className="flex flex-row">
         <p className="text-3xl font-semibold">{todo.title}</p>
       </div>
-      <div className="flex flex-col overflow-scroll">
+      <div className="flex flex-col overflow-auto">
         <div className="flex flex-row justify-around px-5">
           <TodoAttribute
             attribute_name="Id"

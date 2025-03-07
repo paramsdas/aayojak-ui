@@ -56,6 +56,44 @@ const todos: TodoType[] = [
     date_completed: undefined,
     completion_status: false,
   },
+  {
+    id: 7,
+    title: "My test title",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Et ab laborum explicabo quas, inventore dignissimos perferendis quibusdam consequatur similique consequuntur, aliquid laboriosam nesciunt quod provident nemo. Minus nobis asperiores numquam!",
+    date_created: "DD/MM/YYYY (HH:MM:SS)",
+    date_modified: "DD/MM/YYYY (HH:MM:SS)",
+    date_completed: "DD/MM/YYYY (HH:MM:SS)",
+    completion_status: true,
+  },
+  {
+    id: 8,
+    title: "My test title 2",
+    description: undefined,
+    date_created: "DD/MM/YYYY (HH:MM:SS)",
+    date_modified: "DD/MM/YYYY (HH:MM:SS)",
+    date_completed: undefined,
+    completion_status: false,
+  },
+  {
+    id: 9,
+    title: "My test title",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Et ab laborum explicabo quas, inventore dignissimos perferendis quibusdam consequatur similique consequuntur, aliquid laboriosam nesciunt quod provident nemo. Minus nobis asperiores numquam!",
+    date_created: "DD/MM/YYYY (HH:MM:SS)",
+    date_modified: "DD/MM/YYYY (HH:MM:SS)",
+    date_completed: "DD/MM/YYYY (HH:MM:SS)",
+    completion_status: true,
+  },
+  {
+    id: 10,
+    title: "My test title 2",
+    description: undefined,
+    date_created: "DD/MM/YYYY (HH:MM:SS)",
+    date_modified: "DD/MM/YYYY (HH:MM:SS)",
+    date_completed: undefined,
+    completion_status: false,
+  },
 ];
 
 import React from "react";
@@ -99,13 +137,13 @@ function TodoPage() {
         </div>
         <div className="flex flex-row" style={{ maxHeight: "80%" }}>
           <div
-            className="flex max-h-full flex-col overflow-scroll"
+            className="flex max-h-full flex-col overflow-auto"
             style={{ width: "50%" }}
           >
             <div id="todo_list">{todos_dom}</div>
           </div>
           <div
-            className="flex max-h-full flex-col overflow-scroll"
+            className="flex max-h-full flex-col overflow-auto"
             style={{ width: "50%" }}
           >
             <div className="flex h-full w-full flex-row items-center justify-center rounded-lg bg-emerald-200">
