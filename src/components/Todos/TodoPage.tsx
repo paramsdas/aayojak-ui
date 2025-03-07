@@ -51,19 +51,26 @@ function TodoPage() {
 
   return (
     <div className="mx-8 flex h-9/12 px-2">
-      <div className="flex h-full w-full flex-col rounded-lg bg-emerald-900 p-8 pb-12">
-        <div id="heading" className="flex w-full flex-row justify-center">
-          <p className="p-4 text-4xl font-semibold text-emerald-200">Todos</p>
+      <div className="flex max-h-full w-full flex-col overflow-hidden rounded-lg bg-emerald-900 p-6 pt-0">
+        <div
+          id="heading"
+          className="m-2 flex w-full flex-row justify-center p-2"
+          style={{ maxHeight: "15%" }}
+        >
+          <p className="p-2 text-4xl font-semibold text-emerald-200">Todos</p>
         </div>
-        <div className="flex h-full flex-row p-4">
-          <div className="flex flex-col" style={{ width: "50%" }}>
+        <div className="flex flex-row" style={{ maxHeight: "80%" }}>
+          <div
+            className="flex max-h-full flex-col overflow-scroll"
+            style={{ width: "50%" }}
+          >
             <div id="todo_list">{todos_dom}</div>
           </div>
           <div
-            className="flex h-full flex-col rounded-lg bg-emerald-200"
+            className="flex max-h-full flex-col overflow-scroll"
             style={{ width: "50%" }}
           >
-            <div className="flex h-full w-full flex-row items-center justify-center">
+            <div className="flex max-h-full w-full flex-row items-center justify-center rounded-lg bg-emerald-200">
               <DetailedTodo todo={selectedTodo}></DetailedTodo>
             </div>
           </div>
